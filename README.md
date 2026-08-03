@@ -1,121 +1,174 @@
-# 1. Problema de negócio
+# Delivery Marketplace Growth Dashboard
 
-A Cury Company é uma empresa de tecnologia que criou um  aplicativo que conecta restaurantes, entregadores e pessoas.
+An end-to-end Business Intelligence dashboard built with Python, Streamlit, Plotly, Pandas and Folium to monitor strategic KPIs for a food delivery marketplace.
 
-Através desse aplicativo, é possível realizar o pedido de uma refeição, em qualquer restaurante cadastrado, e recebê-lo no 
-conforto da sua casa por um entregador também cadastrado no aplicativo da Cury Company.
+## Technologies
 
-A empresa realiza negócios entre restaurantes, entregadores e pessoas, e gera muitos dados sobre entregas, tipos de pedidos, 
-condições climáticas, avaliação dos entregadores e etc. Apesar da entrega estar crescendo, em termos de entregas, o CEO não tem 
-visibilidade completa dos KPIs de crescimento da empresa.
+- Python
+- Pandas
+- Plotly
+- Streamlit
+- Folium
+- Git
+- GitHub
 
-Você foi contratado como um Cientista de Dados para criar soluções de dados para entrega, mas antes de treinar algoritmos, a 
-necessidade da empresa é ter um os principais KPIs estratégicos organizados em uma única ferramenta, para que o CEO possa 
-consultar e conseguir tomar decisões simples, porém importantes.
+## Skills Demonstrated
 
-A Cury Company possui um modelo de negócio chamado Marketplace, que fazer o intermédio do negócio entre três clientes 
-principais: Restaurantes, entregadores e pessoas compradoras. Para acompanhar o crescimento desses negócios, o CEO 
-gostaria de ver as seguintes métricas de crescimento:
+- Exploratory Data Analysis (EDA)
+- Data Cleaning
+- Data Visualization
+- KPI Design
+- Business Intelligence
+- Geospatial Analysis
+- Dashboard Development
+- Executive Reporting
 
-## Do lado da empresa:
+## Dashboard Preview
+(image)
 
-1. Quantidade de pedidos por dia.
-2. Quantidade de pedidos por semana.
-3. Distribuição dos pedidos por tipo de tráfego.
-4. Comparação do volume de pedidos por cidade e tipo de tráfego. 
-5. A quantidade de pedidos por entregador por semana.
-6. A localização central de cada cidade por tipo de tráfego.
+## Project Structure
+project/
 
-## Do lado do entregador:
+├── dataset/
 
-1. A menor e maior idade dos entregadores   
-2. A pior e a melhor condição de veículos.
-3. A avaliação média por entregador.
-4. A avaliação média e o desvio padrão por tipo de tráfego.
-5. A avaliação média e o desvio padrão por condições climáticas.
-6. Os 10 entregadores mais rápidos por cidade.
-7. Os 10 entregadores mais lentos por cidade
+├── dashboard/
 
-## Do lado do restaurante:
+├── notebooks/
 
-1. A quantidade de entregadores únicos.
-2. A distância média dos restaurantes e dos locais de entrega.
-3. O tempo médio e o desvio padrão de entrega por cidade.
-4. O tempo médio e o desvio padrão de entrega por cidade e tipo de pedido.
-5. O tempo médio e o desvio padrão de entrega por cidade e tipo de tráfego.
-6. O tempo médio de entrega durantes os Festivais.
+├── README.md
 
-O objetivo desse projeto é criar um conjunto de gráficos e/ou tabelas 
-que exibam essas métricas da melhor forma possível para o CEO.
+├── requirements.txt
 
-##2. Premissas assumidas para a análise
+└── app.py
 
-1. A análise foi realizada com dados entre 11/02/2022 e 06/04/2022.
-2. Marketplace foi o modelo de negócio assumido.
-3. Os 3 principais visões do negócio foram: Visão transação de pedidos, visão restaurante e visão entregadores.
-   
-##3. Estratégia da solução
 
-O painel estratégico foi desenvolvido utilizando as métricas que refletem as 3 principais visões do modelo de negócio 
-da empresa: 
+# 1. Business Problem
 
-1. Visão do crescimento da empresa
-2. Visão do crescimento dos restaurantes
-3. Visão do crescimento dos entregadores
+Cury Company is a technology company that has developed a platform that connects restaurants, delivery drivers, and customers.
 
-Cada visão é representada pelo seguinte conjunto de métricas.
+Through the platform, customers can order meals from registered restaurants and have them delivered to their homes by registered delivery drivers.
 
-1. Visão do crescimento da empresa
-  1. Pedidos por dia
-  2. Porcentagem de pedidos por condições de trânsito
-  3. Quantidade de pedidos por tipo e por cidade.
-  4. Pedidos por semana
-  5. Quantidade de pedidos por tipo de entrega
-  6. Quantidade de pedidos por condições de trânsito e tipo de cidade
-   
-2. Visão do crescimento dos restaurantes
-  1. Quantidade de pedidos únicos.
-  2. Distância média percorrida.
-  3. Tempo médio de entrega durante festival e dias normais.
-  4. Desvio padrão do tempo de entrega durante festivais e dias normais.
-  5. Tempo de entrega médio por cidade.
-  6. Distribuição do tempo médio de entrega por cidade.
-  7. Tempo médio de entrega por tipo de pedido.
-   
-3. Visão do crescimento dos entregadores
-  1. Idade do entregador mais velho e do mais novo.
-  2. Avaliação do melhor e do pior veículo.
-  3. Avaliação média por entregador.
-  4. Avaliação média por condições de trânsito.
-  5. Avaliação média por condições climáticas.
-  6. Tempo médio do entregador mais rápido.
-  7. Tempo médio do entregador mais rápido por cidade.
+As a platform, Cury Company generates a large amount of operational data, including delivery information, order types, weather conditions, driver ratings, and more. Although the business has experienced significant growth, the CEO lacks a centralized view of the company's key performance indicators (KPIs).
 
-# 4. Top 3 Insights de dados
-  1. A sazonalidade da quantidade de pedidos é diária. Há uma variação de aproximadamente 10% do número de pedidos em
-  dia sequenciais.
-  2. As cidades do tipo Semi-Urban não possuem condições baixas 
-  de trânsito.
-  3. As maiores variações no tempo de entrega, acontecem durante o clima ensolarado.
-   
-# 5. O produto final do projeto
+You have been hired as a Data Scientist to develop data-driven solutions for the business. Before building predictive models, however, the immediate need is to organize the company's strategic KPIs into a single dashboard, enabling the CEO to monitor business performance and support data-driven decision-making.
 
-Painel online, hospedado em um Cloud e disponível para acesso em qualquer dispositivo conectado à internet.
+Cury Company operates as a marketplace connecting three primary stakeholders:
 
-O painel pode ser acessado através desse link: https://project-currycompany.streamlit.app/
+- Restaurants
+- Delivery drivers
+- Customers
 
-# 6. Conclusão
+To monitor business growth, the CEO requested the following metrics.
 
-O objetivo desse projeto é criar um conjunto de gráficos e/ou tabelas que exibam essas métricas da melhor forma 
-possível para o CEO. 
+## Company View
 
-Da visão da Empresa, podemos concluir que o número de pedidos cresceu entre a semana 06 e a semana 13 do ano de 2022.
+1. Number of orders per day.
+2. Number of orders per week.
+3. Distribution of orders by traffic conditions.
+4. Comparasion of order volume by city and traffic conditions.
+5. Number of orders per delivery driver per week.
+6. Geographical center of each city by traffic conditions.
 
-# 7. Próximo passos
-   
-1. Reduzir o número de métricas.
-2. Criar novos filtros.
-3. Adicionar novas visões de negócio.
+## Delivery Driver View
+
+1. Youngest and oldest delivery driver.
+2. Best and worst vehicle condition.
+3. Average rating per delivery driver.
+4. Average rating and standard deviation by traffic conditions.
+5. Average rating and standard deviation by weather conditions.
+6. Top 10 fastest delivery drivers by city.
+7. Top 10 slowest delivery drivers by city.
+
+## Restaurant View
+
+1. Number of unique delivery drivers.
+2. Average distance between restaurants and delivery locations.
+3. Average delivery time and standard deviation by city.
+4. Average delivery time and standard deviation by city and order type.
+5. Average delivery time and standard deviation by city and traffic conditions.
+6. Average delivery time during festivals.
+
+The objective of this project is to build an interactive dashboard that presents these KPIs in a clear and intuitive way, enabling executive-level decision-making.
+
+---
+
+# 2. Assumptions
+
+- The analysis uses data collected between **February 11-2022, and April 6-2022**.
+- The assumed business model is **Marketplace**.
+- The analysis focuses on three business perspectives:
+  - Company
+  - Restaurants
+  - Delivery Drivers
+
+---
+
+# 3. Solution Strategy
+
+The dashboard was designed to provide insights across the 3 core business perspectives of the marketplace.
+
+## Company Growth View
+
+- Orders per day
+- Percentage of orders by traffic conditions
+- Number of orders by city and order type
+- Orders per week
+- Number of orders by delivery type
+- Number of orders by traffic conditions and city type
+
+## Restaurant Growth View
+
+- Number of unique orders
+- Average delivery distance
+- Average delivery time during festivals and regular days
+- Standard deviation of delivery time during festivals and regular days
+- Average delivery time by city
+- Distribution of average delivery time by city
+- Average delivery time by order type
+
+## Delivery Driver Growth View
+
+- Youngest and oldest delivery driver
+- Best and worst vehicle condition ratings
+- Average rating per delivery driver
+- Average rating by traffic conditions
+- Average rating by weather conditions
+- Average delivery time of the fastest drivers
+- Average delivery time of the fastest drivers by city
+
+---
+
+# 4. Top 3 Business Insights
+
+1. Order demand follows a strong daily seasonality, with approximately a **10% variation** between consecutive days.
+2. Semi-Urban cities do not experience **Low Traffic** conditions.
+3. The largest delivery time variability occurs during **Sunny** weather conditions.
+
+---
+
+# 5. Final Product
+
+Cloud-hosted interactive dashboard accessible from any internet-connected device.
+
+## Live Dashboard
+
+https://curycompany1.streamlit.app/
+
+---
+
+# 6. Conclusion
+
+This project successfully consolidates the company's strategic KPIs into a single dashboard, providing executives with a comprehensive view of business performance.
+
+From the Company View, the analysis indicates a consistent increase in order volume between Week 06 and Week 13 of 2022.
+
+---
+
+# 7. Next Steps
+
+- Simplify the dashboard by reducing the number of displayed metrics.
+- Add new filtering options.
+- Expand the dashboard with additional business perspectives.
 
 
 
