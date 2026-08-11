@@ -6,7 +6,7 @@ st.set_page_config(
     page_icon="🎯"
 )
 
-#image_path = 'C:/Users/Ian/OneDrive/Área de Trabalho/PROJETO_PRATICO_01_MANUAL_ENG_DADOS/images/'
+#image_path = 'C:/Users/Ian/OneDrive/Área de Trabalho/PYTHON_PROJECT_DA/images/'
 image = Image.open( 'cury.png' )
 st.sidebar.image( image, width=120 )
 
