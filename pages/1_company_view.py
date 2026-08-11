@@ -204,7 +204,7 @@ st.dataframe( df1 )
 #STREAMLIT LAYOUT
 #=======================================
 
-tab1, tab2, tab3 = st.tabs ( ['Managerial Vision', 'Tatical Vision', 'Geographical Vision'] )
+tab1, tab2, tab3 = st.tabs ( ['Management Vision', 'Tatical Vision', 'Geographical Vision'] )
 
 with tab1:
     with st.container():
